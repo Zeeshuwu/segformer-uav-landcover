@@ -55,7 +55,19 @@ The default legend has six land cover classes: 1 built-up (Permukiman), 2 water 
 
 ## Background
 
-This code was prepared for a study presented at FIT ISI × Geodeta 2026 and submitted to *IOP Conference Series: Earth and Environmental Science*. The repository contains the general method only, not the study's data, experiments or results.
+This code was prepared for a study presented at FIT ISI × Geodeta 2026 and submitted to *IOP Conference Series: Earth and Environmental Science*. The repository contains the general method, not the study's imagery, experiments or results. The one exception is the study's patch-to-split list, `study_split/split_list.csv`, so that readers can check the spatial split.
+
+The list has one row per 512 × 512 px patch (2,882 rows). Its columns are:
+- `patch_id`: patch identifier.
+- `orthomosaic`: A or B.
+- `block_id`: the 2,048 px block that contains the patch.
+- `split`: training, validation or test.
+- `row_px`, `col_px`: the patch's upper-left pixel in its 0.10 m orthomosaic (EPSG:32650). The upper-left corner of orthomosaic A is at E 551,834.43 m, N 21,251.33 m; that of B is at E 553,380.53 m, N 12,998.93 m.
+- `labelled_px`: labelled pixels in the patch.
+- `dominant_class`: the most frequent class in the patch.
+- `used`: whether the patch was used, or removed from the training split by class balancing.
+
+Every block belongs to exactly one split.
 
 ## License
 
