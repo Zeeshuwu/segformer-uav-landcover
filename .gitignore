@@ -1,0 +1,14 @@
+*.tif
+*.png
+*.pyc
+*.pth
+*.json
+*.zip
+
+data/*
+raw
+venv
+outputs
+
+__pycache__
+
